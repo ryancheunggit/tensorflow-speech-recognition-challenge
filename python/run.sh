@@ -17,7 +17,7 @@ python train.py mfcc_10_40_20 arm_dscnn xl 128
 python train.py mfcc_40_25_10 gg4 3 128
 
 python train.py logsepctrogram_25_18.75 arm_crnn xl 128
-python train.py  logspectrogram_25_18.75 gg4 1 128
+python train.py logspectrogram_25_18.75 gg4 1 128
 Python train.py logspectrogram_25_18.75 joint t 128
 python train.py logspectrogram_25_18.75 arm_dscnn t 128
 python train.py logspectrogram_25_18.75 resnet 18t 128
