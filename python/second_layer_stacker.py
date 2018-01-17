@@ -8,7 +8,6 @@ from sklearn.utils import shuffle
 from util import *
 from sklearn.linear_model import RidgeClassifierCV, RidgeClassifier
 from sklearn.metrics import accuracy_score
-from cheat_score import get_score
 from itertools import combinations_with_replacement
 import matplotlib.pyplot as plt
 
