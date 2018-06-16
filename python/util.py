@@ -13,6 +13,7 @@ import pickle
 import h5py
 from sklearn.utils import shuffle
 from sklearn.metrics import log_loss, accuracy_score
+from keras.callbacks import Callback
 
 SEED = 123
 NUM_FOLDS = 5
