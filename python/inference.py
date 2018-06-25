@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 # Ren Zhang @ ryanzjlib dot gmail dot com
 
-from __future__ import division
-from util import *
 import models
-import numpy as np
 import pandas as pd
-from datetime import datetime
 import sys
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import numpy as np
+import keras.backend as K
+from util import *
+from datetime import datetime
 from keras.callbacks import *
 from keras.models import load_model
-import keras.backend as K
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 
 def main(dataset, model_arch, model_size, batch_size):
     MODEL_NAME = "d-{}_m-{}_s-{}".format(dataset, model_arch, model_size)
@@ -74,6 +74,7 @@ def main(dataset, model_arch, model_size, batch_size):
 
     test_df.label = test_df.label.map(lambda x: "unknown" if x not in labels else x)
     test_df[["fname", "label"]].to_csv(OUT_DIR + "label_predicted.csv", index = False)
+
 
 if __name__ == '__main__':
     """

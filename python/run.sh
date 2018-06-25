@@ -16,19 +16,20 @@ python train.py mfcc_10_40_20 arm_crnn l 128
 python train.py mfcc_10_40_20 arm_dscnn xl 128
 python train.py mfcc_40_25_10 gg4 3 128
 
-python train.py logsepctrogram_25_18.75 arm_crnn xl 128
+python train.py logspectrogram_25_18.75 arm_crnn xl 128
 python train.py logspectrogram_25_18.75 gg4 1 128
-Python train.py logspectrogram_25_18.75 joint t 128
-python train.py logspectrogram_25_18.75 arm_dscnn t 128
+python train.py logspectrogram_25_18.75 join t 128 # hard to get it fit how did I fitted them?
+python train.py logspectrogram_25_18.75 arm_dscnn t 128 #
 python train.py logspectrogram_25_18.75 resnet 18t 128
 
-python train.py logmelsepctrogram_40_25_10 resnet 18 128
-python train.py logmelsepctrogram_40_25_10 resnet 34 128
-python train.py logmelsepctrogram_40_25_10 arm_crnn l 128
-python train.py logmelsepctrogram_40_25_10 arm_crnn xl 128
-python train.py logmelsepctrogram_40_25_10 arm_dscnn l 128
-python train.py logmelsepctrogram_40_25_10 gg4 2 128
-python train.py logmelsepctrogram_40_25_10 gg4 s 128
-python train.py logmelsepctrogram_40_25_10 joint s 128
+python train.py logmelspectrogram_40_25_10 resnet 18 128
+python train.py logmelspectrogram_40_25_10 resnet 34 128
+python train.py logmelspectrogram_40_25_10 arm_crnn l 128
+python train.py logmelspectrogram_40_25_10 arm_crnn xl 128
+python train.py logmelspectrogram_40_25_10 arm_dscnn l 128
+python train.py logmelspectrogram_40_25_10 gg4 2 128
+python train.py logmelspectrogram_40_25_10 gg4 3 128
+python train.py logmelspectrogram_40_25_10 gg4 s 128
+python train.py logmelspectrogram_40_25_10 join s 128
 
 python second_layer_stacker.py

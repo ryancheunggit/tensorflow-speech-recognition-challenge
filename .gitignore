@@ -1,2 +1,5 @@
+.idea
+*.csv
 input
 __pycache__
+models

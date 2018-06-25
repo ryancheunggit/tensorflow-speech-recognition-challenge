@@ -35,14 +35,14 @@ models = [
     "d-logspectrogram_25_18.75_m-arm_dscnn_s-t",                          # ?
     "d-logspectrogram_25_18.75_m-resnet_s-18t",                           # ?
 
-    "d-logmelsepctrogram_40_25_10_m-resnet_s-18",                         # 0.87
-    "d-logmelsepctrogram_40_25_10_m-resnet_s-34",                         # 0.87
-    "d-logmelsepctrogram_40_25_10_m-arm_crnn_s-l" ,                       # 0.87
-    "d-logmelsepctrogram_40_25_10_m-arm_crnn_s-xl" ,                      # 0.87
-    "d-logmelsepctrogram_40_25_10_m-arm_dscnn_s-l",                       # 0.87
-    "d-logmelsepctrogram_40_25_10_m-gg4_s-2" ,                            # 0.88
-    "d-logmelsepctrogram_40_25_10_m-gg4_s-3" ,                            # 0.88
-    "d-logmelsepctrogram_40_25_10_m-join_s-s",                            # 0.86
+    "d-logmelspectrogram_40_25_10_m-resnet_s-18",                         # 0.87
+    "d-logmelspectrogram_40_25_10_m-resnet_s-34",                         # 0.87
+    "d-logmelspectrogram_40_25_10_m-arm_crnn_s-l" ,                       # 0.87
+    "d-logmelspectrogram_40_25_10_m-arm_crnn_s-xl" ,                      # 0.87
+    "d-logmelspectrogram_40_25_10_m-arm_dscnn_s-l",                       # 0.87
+    "d-logmelspectrogram_40_25_10_m-gg4_s-2" ,                            # 0.88
+    "d-logmelspectrogram_40_25_10_m-gg4_s-3" ,                            # 0.88
+    "d-logmelspectrogram_40_25_10_m-join_s-s",                            # 0.86
 ]
 
 predicts = pd.concat([
