@@ -640,7 +640,7 @@ Epoch 55/65535
 Epoch 00055: early stopping
 ========= generating oof predictions 08:29:15 =========
 ========= generating test set predictions 08:29:29 =========
-========= fitting 5 th model 08:32:20 =========
+========= fitting 5 th model 17:32:20 =========
 Epoch 1/65535
 420/420 [==============================] - 197s 469ms/step - loss: 0.1093 - categorical_accuracy: 0.3003 - val_loss: 0.0882 - val_categorical_accuracy: 0.4619
 Epoch 2/65535
@@ -711,7 +711,6 @@ Epoch 34/65535
 420/420 [==============================] - 214s 510ms/step - loss: 0.0058 - categorical_accuracy: 0.9674 - val_loss: 0.0137 - val_categorical_accuracy: 0.9272
 Epoch 35/65535
 420/420 [==============================] - 215s 512ms/step - loss: 0.0057 - categorical_accuracy: 0.9675 - val_loss: 0.0126 - val_categorical_accuracy: 0.9360
-
 Epoch 00035: ReduceLROnPlateau reducing learning rate to 0.2.
 Epoch 36/65535
 420/420 [==============================] - 215s 512ms/step - loss: 0.0043 - categorical_accuracy: 0.9760 - val_loss: 0.0091 - val_categorical_accuracy: 0.9539
@@ -739,7 +738,6 @@ Epoch 47/65535
 420/420 [==============================] - 215s 513ms/step - loss: 0.0030 - categorical_accuracy: 0.9836 - val_loss: 0.0091 - val_categorical_accuracy: 0.9562
 Epoch 48/65535
 420/420 [==============================] - 215s 511ms/step - loss: 0.0029 - categorical_accuracy: 0.9841 - val_loss: 0.0099 - val_categorical_accuracy: 0.9559
-
 Epoch 00048: ReduceLROnPlateau reducing learning rate to 0.04000000059604645.
 Epoch 49/65535
 420/420 [==============================] - 215s 512ms/step - loss: 0.0029 - categorical_accuracy: 0.9843 - val_loss: 0.0085 - val_categorical_accuracy: 0.9600
@@ -761,7 +759,6 @@ Epoch 57/65535
 420/420 [==============================] - 200s 476ms/step - loss: 0.0027 - categorical_accuracy: 0.9851 - val_loss: 0.0084 - val_categorical_accuracy: 0.9606
 Epoch 58/65535
 420/420 [==============================] - 196s 466ms/step - loss: 0.0028 - categorical_accuracy: 0.9849 - val_loss: 0.0087 - val_categorical_accuracy: 0.9594
-
 Epoch 00058: ReduceLROnPlateau reducing learning rate to 0.007999999821186066.
 Epoch 59/65535
 420/420 [==============================] - 195s 465ms/step - loss: 0.0026 - categorical_accuracy: 0.9854 - val_loss: 0.0085 - val_categorical_accuracy: 0.9601
@@ -773,7 +770,6 @@ Epoch 62/65535
 420/420 [==============================] - 197s 469ms/step - loss: 0.0026 - categorical_accuracy: 0.9853 - val_loss: 0.0085 - val_categorical_accuracy: 0.9600
 Epoch 63/65535
 420/420 [==============================] - 197s 468ms/step - loss: 0.0026 - categorical_accuracy: 0.9851 - val_loss: 0.0085 - val_categorical_accuracy: 0.9607
-
 Epoch 00063: ReduceLROnPlateau reducing learning rate to 0.0015999998897314072.
 Epoch 64/65535
 420/420 [==============================] - 196s 467ms/step - loss: 0.0026 - categorical_accuracy: 0.9855 - val_loss: 0.0085 - val_categorical_accuracy: 0.9606
@@ -784,8 +780,8 @@ Epoch 66/65535
 Epoch 67/65535
 420/420 [==============================] - 196s 467ms/step - loss: 0.0026 - categorical_accuracy: 0.9853 - val_loss: 0.0085 - val_categorical_accuracy: 0.9606
 Epoch 00067: early stopping
-========= generating oof predictions 12:22:11 =========
-========= generating test set predictions 12:22:25 =========
+========= generating oof predictions 23:22:11 =========
+========= generating test set predictions 23:22:25 =========
 train loss avg 0.0034621412723576314 -- std 0.0005090567055871143, val loss avg 0.008507592018460365 -- std 0.000290914056186866
 train acc avg 0.9814138306735215 -- std 0.002282310004780581, val acc avg 0.9568247484345903 -- std 0.003594557364268731
 mean nb epochs 54.4

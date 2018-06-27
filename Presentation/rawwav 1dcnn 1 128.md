@@ -777,14 +777,5 @@ Epoch 63/65535
 420/420 [==============================] - 381s 908ms/step - loss: 0.0051 - categorical_accuracy: 0.9718 - val_loss: 0.0094 - val_categorical_accuracy: 0.9543
 Epoch 64/65535
 420/420 [==============================] - 381s 908ms/step - loss: 0.0048 - categorical_accuracy: 0.9734 - val_loss: 0.0095 - val_categorical_accuracy: 0.9532
-
 Epoch 00064: ReduceLROnPlateau reducing learning rate to 0.001.
 Epoch 00064: early stopping
-
-
-
-
-
-
-With multiprocessing and increase to 512 batch_size
-105/105 [==============================] - 295s 3s/step - loss: 0.1441 - categorical_accuracy: 0.1113 - val_loss: 0.1240 - val_categorical_accuracy: 0.1972

@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def parse_log(filepath):
-    print(filepath)
+    # print(filepath)
     model_name = '_'.join(filepath.split('/')[2].split('.md')[0].split())
     print(" ---- start process log for model {}".format(model_name))
     lines = open(filepath).readlines()
@@ -22,6 +22,8 @@ def parse_log(filepath):
             epoch = 0
         if line_content.startswith('========= generating oof'):
             end_time = pd.to_datetime(line_content.split()[-2])
+            if end_time < start_time:
+                end_time += pd.Timedelta(1, unit='D')
             # print(" --- end_time {}".format(end_time))
             fitting_times.append(pd.Series({
                 'fitting_time':end_time - start_time

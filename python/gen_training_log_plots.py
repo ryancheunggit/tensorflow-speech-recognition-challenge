@@ -16,11 +16,23 @@ def plot_training_progress(model_name):
     fig = plt.figure()
     plt.rcParams['figure.figsize'] = [16, 12]
     plt.rcParams['legend.fontsize'] = 20
-    plt.suptitle(model_name.replace('arm', '').replace('_', ' ') + \
-                 '   ({0:.2f} ± {1:.2f})'.format(
+    mean_loss, mean_acc = loss_progress.groupby('fold').agg({
+        'valid_loss': lambda x: x.mean(),
+        'valid_acc': lambda x: x.mean()
+    }, axis=0).mean()
+    std_loss, std_acc = loss_progress.groupby('fold').agg({
+        'valid_loss': lambda x: x.mean(),
+        'valid_acc': lambda x: x.mean()
+    }, axis=0).mean()
+    plt.suptitle(model_name.replace('arm', '').replace('_', ' ').replace('ddnn', 'fc') + \
+                 '   ({0:.2f} ± {1:.2f} minutes)'.format(
                      fitting_times['fitting_time'].mean(),
                      fitting_times['fitting_time'].std(),
-                 ), fontsize=24)
+                 ) + '\n' + \
+                 ' Logloss: {0:.2f} ± {1:.2f}  -- Accuracy:  {2:.2f} ± {3:.2f}'.format(
+                 mean_loss, std_loss, mean_acc, std_acc
+                 )
+                 , fontsize=24, linespacing=1.5)
     ax1 = plt.subplot(211)
     plt.title('Loss by epochs')
     ax2 = plt.subplot(212)
@@ -44,6 +56,7 @@ def plot_training_progress(model_name):
         ax2.axvline(x=lr_decay_loc, color='m', alpha=0.8, linestyle=':')
     ax1.axvline(x=terminate_loss_loc, color='y', alpha=0.8, linestyle='--')
     ax2.axvline(x=terminate_acc_loc, color='y', alpha=0.8, linestyle='--')
+    # plt.show()
     plt.savefig('../Presentation/plot_training_progress_{}.png'.format(model_name))
     plt.close('all')
 
