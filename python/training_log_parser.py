@@ -2,7 +2,8 @@ import pandas as pd
 import os
 
 def parse_log(filepath):
-    model_name = '_'.join(filepath.split('/')[2].split('.')[0].split())
+    print(filepath)
+    model_name = '_'.join(filepath.split('/')[2].split('.md')[0].split())
     print(" ---- start process log for model {}".format(model_name))
     lines = open(filepath).readlines()
     fold_num = 0
