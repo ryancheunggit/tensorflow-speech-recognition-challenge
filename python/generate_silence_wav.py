@@ -29,5 +29,12 @@ def main():
                 print(out_name)
             wavfile.write(out_path + out_name, sample_rate, data)
 
+    for i in range(500):
+        d = np.zeros(16000)
+        loc = np.random.randint(0, 16000, 4600)
+        d[loc[::2]] = -1
+        d[loc[1::2]] = 1
+        wavfile.write(out_path + 'new_synthesised_{}.wav'.format(i), 16000, d)
+
 if __name__ == '__main__':
     main()

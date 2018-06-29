@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # Ren Zhang @ ryanzjlib dot gmail dot com
 
-from __future__ import division
 import librosa
 import numpy as np
 from scipy.io import wavfile
@@ -37,7 +36,7 @@ full_label_num_mapping={full_labels[i]: i for i in range(len(full_labels))}
 full_num_label_mapping={i: full_labels[i] for i in range(len(full_labels))}
 
 
-def read_wav_sample(path):
+def read_wav_sample(path: str):
     ''' read in wav file as sample data, pad / truncate if needed'''
     sample_rate, samples=wavfile.read(path)
     if len(samples) > sample_rate:
@@ -73,7 +72,8 @@ def read_logmelspectrogram(filepath, num_components=40, n_fft=400, hop_length=16
         samples=samples[:sample_rate]
     else:
         samples=np.pad(samples, (0, max(0, sample_rate - len(samples))), 'constant')
-    melspectrogram=librosa.feature.melspectrogram(y=samples, sr=16000, n_fft=n_fft, hop_length=hop_length, n_mels=num_components)
+    melspectrogram=librosa.feature.melspectrogram(y=samples, sr=16000, n_fft=n_fft, hop_length=hop_length,
+                                                  n_mels=num_components)
     return librosa.power_to_db(melspectrogram).T
 
 
@@ -120,9 +120,16 @@ def batch_generator(X, y=None, batch_size=128, task='train', noise_level=None, s
         if task == 'train' and y is not None:
             y_batch = y[lower_bound:upper_bound, :]
             if noise_level:
-                X_batch += (noise_level * np.random.random() * X_batch.std(axis=1) * np.random.randn(current_batch_size, 16000)).reshape(current_batch_size, 16000, 1).astype(int)
+                X_batch += (
+                    noise_level * np.random.random() * X_batch.std(axis=1) *
+                    np.random.randn(current_batch_size, 16000)
+                ).reshape(current_batch_size, 16000, 1).astype(int)
             if shift_level:
-                X_batch=np.roll(X_batch, int(shift_level * (np.random.random() -0.5 ) / 5 * 16000), 1)
+                X_batch = np.roll(
+                    X_batch,
+                    int(shift_level * (np.random.random() -0.5 ) / 5 * 16000),
+                    1
+                )
             if stretch_level:
                 # pool = Pool(8)
                 # stretch_func = partial(stretch, stretch_level=stretch_level)
@@ -130,11 +137,21 @@ def batch_generator(X, y=None, batch_size=128, task='train', noise_level=None, s
                 # pool.close()
                 # X_batch = np.array(results)[:,:,np.newaxis]
                 for i in range(X_batch.shape[0]):
-                    modified_samples=librosa.effects.time_stretch(X_batch[i, :].flatten().astype('float64'), 2 ** (stretch_level / 5 * (np.random.random() -0.5 )))
+                    modified_samples = librosa.effects.time_stretch(
+                        X_batch[i, :].flatten().astype('float64'),
+                        2 ** (stretch_level / 5 * (np.random.random() -0.5 ))
+                    )
                     if len(modified_samples) > 16000:
-                        modified_samples=modified_samples[int((modified_samples.shape[0] - 16000) /2): - int((modified_samples.shape[0] - 16000) /2)]
+                        modified_samples = modified_samples[
+                            int((modified_samples.shape[0] - 16000) /2):
+                            - int((modified_samples.shape[0] - 16000) /2)
+                        ]
                     else:
-                        modified_samples=np.pad(modified_samples, (0, max(0, 16000 - len(modified_samples))), 'constant')
+                        modified_samples = np.pad(
+                            modified_samples,
+                            (0, max(0, 16000 - len(modified_samples))),
+                            'constant'
+                        )
                     X_batch[i, :]=modified_samples.reshape(16000, 1)
             yield (X_batch, y_batch)
         elif task == 'test':
