@@ -94,6 +94,7 @@ def get_test_wavefilename():
 def get_folds():
     return pickle.load(open("../input/folds.pkl", "rb"))
 
+
 def stretch(A, stretch_level):
     A = librosa.effects.time_stretch(A.flatten().astype('float64'), 2 ** (stretch_level / 5 * (np.random.random() - 0.5)))
     if len(A) > 16000:
