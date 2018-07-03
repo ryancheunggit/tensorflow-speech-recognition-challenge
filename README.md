@@ -21,11 +21,11 @@ For first layer models, I used the model archituctures described in Arms' paper 
 List of first layer neural network archituctures:
 1. Fully connected network / MLP .
 2. 1D/2D VGG style Convolutional neural network .
-3. Recurrent neural network   
+3. Recurrent neural network . (I wasn't using Cudnn RNN at the time, so limited experiments were done)
 4. Convolutional recurrent neural network .  
 5. Depth seperatable convolutional neural network  
 6. Joint model which concatenate intermediate layers from CNN and RNN .
-7. ResNet-18 and ResNet-34 .
+7. ResNet-18 and ResNet-34 .(My implementation is wrong)
 
 My second layer stacker is a simple Ridge Classifier, and the stacking only improved very slightly over the best model.
 
